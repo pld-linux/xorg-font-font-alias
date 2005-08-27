@@ -1,4 +1,4 @@
-# $Rev: 3194 $, $Date: 2005-08-15 12:17:57 $
+# $Rev: 3194 $, $Date: 2005-08-27 17:42:48 $
 #
 Summary:	font-alias
 Summary(pl):	font-alias
@@ -13,7 +13,7 @@ URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	xorg-util-util-macros
-BuildRequires:	pkg-config
+BuildRequires:	pkgconfig >= 0.19
 BuildRoot:	%{tmpdir}/font-alias-%{version}-root-%(id -u -n)
 
 %description
