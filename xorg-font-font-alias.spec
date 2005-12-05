@@ -37,12 +37,15 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT%{_fontsdir}
+mv -f $RPM_BUILD_ROOT%{_libdir}/X11/fonts/* $RPM_BUILD_ROOT%{_fontsdir}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{_libdir}/X11/fonts/100dpi/fonts.alias
-%{_libdir}/X11/fonts/75dpi/fonts.alias
-%{_libdir}/X11/fonts/cyrillic/fonts.alias
-%{_libdir}/X11/fonts/misc/fonts.alias
+%{_fontsdir}/100dpi/fonts.alias
+%{_fontsdir}/75dpi/fonts.alias
+%{_fontsdir}/cyrillic/fonts.alias
+%{_fontsdir}/misc/fonts.alias
