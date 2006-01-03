@@ -1,16 +1,15 @@
 Summary:	X font alias databases
 Summary(pl):	Baza aliasów fontów X
 Name:		xorg-font-font-alias
-Version:	0.99.0
+Version:	1.0.1
 Release:	0.1
 License:	MIT
 Group:		Fonts
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-alias-%{version}.tar.bz2
-# Source0-md5:	ab102077178a9dbfc90ac091c62ead03
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/font/font-alias-%{version}.tar.bz2
+# Source0-md5:	c4776b6f0f2ecdb7670b6fe64b5d2a2d
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
-BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-util-util-macros
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -27,7 +26,8 @@ Baza aliasów fontów X.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	--with-top-fontdir=%{_fontsdir}
 
 %{__make}
 
@@ -37,14 +37,12 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_fontsdir}
-mv -f $RPM_BUILD_ROOT%{_libdir}/X11/fonts/* $RPM_BUILD_ROOT%{_fontsdir}
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc COPYING ChangeLog 
 %{_fontsdir}/100dpi/fonts.alias
 %{_fontsdir}/75dpi/fonts.alias
 %{_fontsdir}/cyrillic/fonts.alias
