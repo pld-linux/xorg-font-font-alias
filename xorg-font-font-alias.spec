@@ -1,5 +1,5 @@
 Summary:	X font alias databases
-Summary(pl):	Baza alias體 font體 X
+Summary(pl.UTF-8):   Baza alias贸w font贸w X
 Name:		xorg-font-font-alias
 Version:	1.0.1
 Release:	0.1
@@ -16,8 +16,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 X font alias databases.
 
-%description -l pl
-Baza alias體 font體 X.
+%description -l pl.UTF-8
+Baza alias贸w font贸w X.
 
 %prep
 %setup -q -n font-alias-%{version}
