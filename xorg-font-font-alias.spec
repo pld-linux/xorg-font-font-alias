@@ -1,5 +1,5 @@
 Summary:	X font alias databases
-Summary(pl.UTF-8):   Baza aliasów fontów X
+Summary(pl.UTF-8):	Baza aliasów fontów X
 Name:		xorg-font-font-alias
 Version:	1.0.1
 Release:	0.1
