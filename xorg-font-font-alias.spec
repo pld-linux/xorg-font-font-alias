@@ -2,7 +2,7 @@ Summary:	X font alias databases
 Summary(pl.UTF-8):	Baza aliasów fontów X
 Name:		xorg-font-font-alias
 Version:	1.0.1
-Release:	1
+Release:	2
 License:	MIT
 Group:		Fonts
 Source0:	http://xorg.freedesktop.org/releases/individual/font/font-alias-%{version}.tar.bz2
@@ -12,6 +12,7 @@ BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	xorg-util-util-macros
 Requires(post,postun):	fontpostinst
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
