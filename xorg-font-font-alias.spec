@@ -10,7 +10,8 @@ Source0:	http://xorg.freedesktop.org/releases/individual/font/font-alias-%{versi
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
-BuildRequires:	xorg-util-util-macros
+BuildRequires:	xorg-font-font-util >= 1.1
+BuildRequires:	xorg-util-util-macros >= 1.3
 Requires(post,postun):	fontpostinst
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -29,8 +30,8 @@ Baza aliasów fontów X.
 %{__autoconf}
 %{__automake}
 %configure \
-	--build=%{_host_platform} \
-	--host=%{_host_platform} \
+	--build=%{_host} \
+	--host=%{_host} \
 	--with-fontrootdir=%{_fontsdir}
 
 %{__make}
@@ -62,7 +63,7 @@ fontpostinst misc
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING ChangeLog 
+%doc COPYING ChangeLog README
 %{_fontsdir}/100dpi/fonts.alias.xorg
 %{_fontsdir}/75dpi/fonts.alias.xorg
 %{_fontsdir}/cyrillic/fonts.alias.xorg
