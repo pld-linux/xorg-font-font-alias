@@ -10,7 +10,7 @@ Source0:	https://xorg.freedesktop.org/releases/individual/font/font-alias-%{vers
 URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
-BuildRequires:	xorg-font-font-util >= 1.1
+BuildRequires:	xorg-font-font-util >= 1.2
 BuildRequires:	xorg-util-util-macros >= 1.3
 Requires(post,postun):	fontpostinst
 BuildArch:	noarch
